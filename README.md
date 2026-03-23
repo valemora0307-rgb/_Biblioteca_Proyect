@@ -1,58 +1,55 @@
-📚 Sistema de Gestión de Biblioteca - Solana
-Este proyecto es un Smart Contract (Programa) desarrollado en la blockchain de Solana utilizando el framework Anchor. Permite a los usuarios registrar libros, actualizar sus descripciones y eliminarlos para recuperar el depósito de espacio (renta).
+🧬 Master Project: Dynamic cNFTs
+Este proyecto es una Descentralized Application (dApp) construida en la blockchain de Solana utilizando el framework Anchor. El objetivo principal es la creación y evolución de NFTs comprimidos (cNFTs) que cambian sus metadatos (URI) basándose en la interacción del usuario.
 
 🚀 Características
-Registro de Libros: Almacena título, autor y año de publicación.
+cNFTs (Compressed NFTs): Utiliza la tecnología de compresión de estado de Solana para mintear NFTs a un costo ultra bajo.
 
-Uso de PDAs (Program Derived Addresses): Cada libro se almacena en una dirección única derivada del título y la billetera del usuario.
+Evolución Dinámica: Los NFTs pueden "evolucionar" cambiando su apariencia (URI) a través de instrucciones del Smart Contract.
 
-Gestión de Renta: Incluye una función para eliminar el registro y devolver los SOL al propietario.
+Integración con Metaplex: Implementa el programa Bubblegum para el manejo de los árboles de Merkle.
 
-Seguridad: Solo el propietario que registró el libro puede modificarlo o eliminarlo.
+🎨 Prototipado y UX/UI
+El flujo de usuario y el diseño de la interfaz para la evolución de las mascotas digitales se encuentra disponible en:
 
-🛠️ Tecnologías utilizadas
-Rust: Lenguaje para el Smart Contract.
+Figma: Digital Pet Evolution - Prototype
 
-Anchor Framework: v0.28.0+ para el desarrollo y pruebas.
+🛠️ Estructura del Proyecto
+lib.rs: Contrato inteligente en Rust que gestiona la lógica de evolución.
 
-TypeScript: Para el cliente y los tests de integración.
+anchor.test.ts: Suite de pruebas para validar el minteo y la evolución.
 
-Solana Playground: Entorno de desarrollo.
+client.ts: Script de cliente para interactuar con el programa desde el frontend o consola.
 
-📂 Estructura del Proyecto
-src/lib.rs: Contiene la lógica del programa en Rust.
+🔧 Requisitos (Solana Playground)
+Abrir Solana Playground.
 
-client.ts: Script para consultar el balance y la dirección del usuario.
+Importar los archivos del proyecto.
 
-anchor.test.ts: Suite de pruebas para verificar el funcionamiento del CRUD.
+Tener configurado el entorno en Devnet.
 
-🔧 Instrucciones de Uso
-1. Despliegue (Deploy)
-En Solana Playground, haz clic en el botón Build.
-
-Una vez compilado, ve a la pestaña de Deploy y presiona el botón para subirlo a la Devnet.
-
-2. Ejecución del Cliente
-En la pestaña client.ts, presiona Run para ver tu dirección y balance:
+Contar con algo de SOL de prueba ejecutando en la terminal:
 
 Bash
-Running client...
-Tu dirección: FdDNbReJJQTQbaC...
-Tu balance actual es: 2.0 SOL
-3. Pruebas (Tests)
-Para verificar que todo funciona correctamente, ejecuta los tests:
+solana airdrop 2
+🏗️ Cómo usar
+Build: Haz clic en el icono del martillo (Build) para compilar el programa en Rust.
 
-Bash
-Running tests...
-✅ Libro registrado: Rayuela
-✅ Nueva descripción: Una obra maestra fundamental.
-✅ Cuenta cerrada y SOL devuelto.
-📝 Definición de la Cuenta
-El programa utiliza una estructura de datos optimizada:
+Deploy: Ve a la pestaña de "Build & Deploy" y despliega el contrato en la Devnet.
 
-Owner: 32 bytes (Pubkey)
+Test: Ejecuta los tests para verificar que el árbol de Merkle se crea correctamente y el NFT evoluciona.
 
-Título: Máx 50 caracteres.
+📝 Instrucción Principal: evolve_pet
+Esta función recibe los parámetros del cNFT y actualiza su estado en la cadena:
+
+root, data_hash, creator_hash: Pruebas de Merkle para validar la propiedad del NFT.
+
+nonce e index: Identificadores únicos del NFT dentro del árbol.
+
+new_uri: El nuevo enlace (Arweave o IPFS) con la imagen de la mascota evolucionada.
+
+Generado para el proyecto final de UTMA - Marzo 2026.
+
+¿Te gustaría que agregue una sección de "Tecnologías" con una tabla comparativa sobre las ventajas de usar cNFTs frente a los NFTs tradicionales?
 
 Autor: Máx 50 caracteres.
 
