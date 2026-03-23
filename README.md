@@ -11,7 +11,7 @@ Integración con Metaplex: Implementa el programa Bubblegum para el manejo de lo
 🎨 Prototipado y UX/UI
 El flujo de usuario y el diseño de la interfaz para la evolución de las mascotas digitales se encuentra disponible en:
 
-Figma: Digital Pet Evolution - Prototype
+Figma: Digital Pet Evolution - Prototipo
 
 🛠️ Estructura del Proyecto
 lib.rs: Contrato inteligente en Rust que gestiona la lógica de evolución.
@@ -48,11 +48,3 @@ nonce e index: Identificadores únicos del NFT dentro del árbol.
 new_uri: El nuevo enlace (Arweave o IPFS) con la imagen de la mascota evolucionada.
 
 Generado para el proyecto final de UTMA - Marzo 2026.
-
-¿Te gustaría que agregue una sección de "Tecnologías" con una tabla comparativa sobre las ventajas de usar cNFTs frente a los NFTs tradicionales?
-
-Autor: Máx 50 caracteres.
-
-Año: 2 bytes (u16)
-
-Descripción: Máx 100 caracteres.
